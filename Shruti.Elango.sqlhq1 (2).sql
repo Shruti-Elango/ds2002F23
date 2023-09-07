@@ -62,10 +62,9 @@ UNION ALL
 
 
 # 10). Product Name, Units on order and units in stock where quantity in stock is less than quantity on-order
-SELECT product_name as "Product Name", quantity_per_unit as "Unit/Quantity", minimum_reorder_quantity as "Units on Order"
+SELECT product_name as "Product Name", reorder_level as "Units in Stock", target_level as "Units on Order"
 	FROM northwind.products
-	WHERE quantity_per_unit < minimum_reorder_quantity
-	ORDER BY quantity_per_unit;
+	WHERE reorder_level < target_level;
     
 #EXTRA CREDIT
 #11). Products with supplier company and address info
