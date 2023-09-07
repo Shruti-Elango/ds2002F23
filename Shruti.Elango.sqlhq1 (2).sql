@@ -12,7 +12,8 @@ SELECT COUNT(*) FROM products;
 SELECT product_name as "Product Name", quantity_per_unit as "Unit/Quantity" from products;
 
 # 2). Product ID and Name of Current Products
-SELECT id as "Product ID", product_name as "Current Products" from products;
+SELECT id as "Product ID", product_name as "Current Products" from products
+WHERE discontinued = 0;
 
 # 3). Product ID and Name of Discontinued Products
 SELECT id as "Product ID", discontinued as "Discontinued Products", product_name as "Product Name" from products
