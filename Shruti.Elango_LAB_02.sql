@@ -12,8 +12,8 @@ CREATE TABLE `stock_port`.`current_port` (
   `stock_ticker` VARCHAR(45) NOT NULL,
   `number_shares` INT NOT NULL,
   `date_purchased` DATE NOT NULL,
-  `price_purchased` DECIMAL(10,0) NOT NULL,
-  `current_price` DECIMAL(10,0) NULL,
+  `price_purchased` DECIMAL(10,3) NOT NULL,
+  `current_price` DECIMAL(10,3) NULL,
   PRIMARY KEY (`stock_ticker`));
 
 
