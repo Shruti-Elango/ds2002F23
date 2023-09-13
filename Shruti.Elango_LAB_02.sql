@@ -1,5 +1,7 @@
+#Create Schema
 CREATE SCHEMA 'stock_port';
 
+#Creating tables
 CREATE TABLE `stock_port`.`company_tbl` (
   `company_name` VARCHAR(45) NOT NULL,
   `stock_ticker` VARCHAR(45) NULL,
