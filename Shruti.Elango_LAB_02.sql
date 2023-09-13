@@ -40,7 +40,7 @@ INSERT INTO company_tbl (company_name, stock_ticker, industry) VALUES
 select * from company_tbl;
 
 #SQL
-select company_name as "Company Name", current_port.stock_ticker as "Ticker", number_shares as "Number of Shares", current_price as "Current Price"
+select company_name as "Company Name", current_port.stock_ticker as "Ticker", number_shares as "Number of Shares", price_purchased as "Price Purchased", current_price as "Current Price"
 FROM current_port, company_tbl
 WHERE current_port.stock_ticker = company_tbl. stock_ticker;
 
