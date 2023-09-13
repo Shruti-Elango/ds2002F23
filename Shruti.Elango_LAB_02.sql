@@ -1,3 +1,18 @@
+CREATE TABLE `stock_port`.`company_tbl` (
+  `company_name` VARCHAR(45) NOT NULL,
+  `stock_ticker` VARCHAR(45) NULL,
+  `industry` VARCHAR(45) NULL,
+  PRIMARY KEY (`company_name`));
+  
+CREATE TABLE `stock_port`.`current_port` (
+  `stock_ticker` VARCHAR(45) NOT NULL,
+  `number_shares` INT NOT NULL,
+  `date_purchased` DATE NOT NULL,
+  `price_purchased` DECIMAL(10,0) NOT NULL,
+  `current_price` DECIMAL(10,0) NULL,
+  PRIMARY KEY (`stock_ticker`));
+
+
 USE stock_port;
 #first table--> current portfolio
 
