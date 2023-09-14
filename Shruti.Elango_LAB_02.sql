@@ -4,8 +4,8 @@ CREATE SCHEMA 'stock_port';
 #Creating tables
 CREATE TABLE `stock_port`.`company_tbl` (
   `company_name` VARCHAR(45) NOT NULL,
-  `stock_ticker` VARCHAR(45) NULL,
-  `industry` VARCHAR(45) NULL,
+  `stock_ticker` VARCHAR(45) NOT NULL,
+  `industry` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`company_name`));
   
 CREATE TABLE `stock_port`.`current_port` (
@@ -13,7 +13,7 @@ CREATE TABLE `stock_port`.`current_port` (
   `number_shares` INT NOT NULL,
   `date_purchased` DATE NOT NULL,
   `price_purchased` DECIMAL(10,3) NOT NULL,
-  `current_price` DECIMAL(10,3) NULL,
+  `current_price` DECIMAL(10,3) NOT NULL,
   PRIMARY KEY (`stock_ticker`));
 
 
@@ -40,7 +40,7 @@ INSERT INTO company_tbl (company_name, stock_ticker, industry) VALUES
 select * from company_tbl;
 
 #SQL
-select company_name as "Company Name", current_port.stock_ticker as "Ticker", number_shares as "Number of Shares", price_purchased as "Price Purchased", current_price as "Current Price"
+select company_name as "Company Name", current_port.stock_ticker as "Ticker", number_shares as "Number of Shares", current_port.number_shares * current_port.current_price AS "Value"
 FROM current_port, company_tbl
 WHERE current_port.stock_ticker = company_tbl. stock_ticker;
 
